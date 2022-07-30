@@ -22,7 +22,7 @@ Gain the root access.
 - Clean up : Post-Exploitation
 
 #### Host Discovery
-Generally we know the target IP address. Since lab is set up as internal network and addresses are assigned by DHCP server. We need to find the target IP address. Host IP address is ```10.10.10.2```
+Generally we know the target IP address. Since lab is set up as internal network and addresses are assigned by DHCP server. We need to find the target IP address. Host IP address is ```10.10.10.2```. Using netdiscover we found the target IP i.e., ```10.10.10.4```.
 ```bash
 sudo netdiscover -r 10.10.10.1/24
 ```
@@ -37,5 +37,8 @@ nmap --vv -sV -sC -A -T5 -oN nmap_fast 10.10.10.4
 ![nmap results](/assets/img/vulnhub/kioptrix/lvl2/nmap-2.png "nmap scan")
 
 
+#### Finding vulnerability and exploitation
 
-A soulful notion of success rests on the actualization of our innate image. Success is simply the completion of a soul step, however unsightly it may be. We have finished what we started when the lesson is learned. What a fear-based culture calls a wonderful opportunity may be fruitless and misguided for the soul. Staying in a passionless relationship may satisfy our need for comfort, but it may stifle the soul. Becoming a famous lawyer is only worthwhile if the soul demands it. It is an essential failure if you are called to be a monastic this time around. If you need to explore and abandon ten careers in order to stretch your soul toward its innate image, then so be it. Flake it till you make it.
+#### Privilege Escalation
+
+#### Post-Exploitation
