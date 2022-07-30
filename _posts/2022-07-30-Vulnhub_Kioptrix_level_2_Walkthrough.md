@@ -22,9 +22,20 @@ Gain the root access.
 - Clean up : Post-Exploitation
 
 #### Host Discovery
-Generally we know the target IP address. Since lab is set up as internal network and addresses are assigned by DHCP server. We need to find the target IP address.
+Generally we know the target IP address. Since lab is set up as internal network and addresses are assigned by DHCP server. We need to find the target IP address. Host IP address is ```10.10.10.2```
+```bash
+sudo netdiscover -r 10.10.10.1/24
+```
 ![sudo netdiscover -r \<ip-range\>](/assets/img/vulnhub/kioptrix/lvl2/kioptrix_lvl2_host_discovery.png "Host Discovery using netdiscover")
 
-At the heart of the struggle are two very different ideas of success—survival-driven and soul-driven. For survivalists, success is security, pragmatism, power over others. Success is the absence of material suffering, the nourishing of the soul be damned. It is an odd and ironic thing that most of the material power in our world often resides in the hands of younger souls. Still working in the egoic and material realms, they love the sensations of power and focus most of their energy on accumulation. Older souls tend not to be as materially driven. They have already played the worldly game in previous lives and they search for more subtle shades of meaning in this one—authentication rather than accumulation. They are often ignored by the culture at large, although they really are the truest warriors.
+#### Enumeration
+It is the most important step to achieve our objective. More the information about the target more the possibilities of attack vectors. Quick nmap scan reveals the information about the various common services running on the target.
+```bash
+nmap --vv -sV -sC -A -T5 -oN nmap_fast 10.10.10.4
+```
+![nmap results](/assets/img/vulnhub/kioptrix/lvl2/nmap-1.png "nmap scan")
+![nmap results](/assets/img/vulnhub/kioptrix/lvl2/nmap-2.png "nmap scan")
+
+
 
 A soulful notion of success rests on the actualization of our innate image. Success is simply the completion of a soul step, however unsightly it may be. We have finished what we started when the lesson is learned. What a fear-based culture calls a wonderful opportunity may be fruitless and misguided for the soul. Staying in a passionless relationship may satisfy our need for comfort, but it may stifle the soul. Becoming a famous lawyer is only worthwhile if the soul demands it. It is an essential failure if you are called to be a monastic this time around. If you need to explore and abandon ten careers in order to stretch your soul toward its innate image, then so be it. Flake it till you make it.
