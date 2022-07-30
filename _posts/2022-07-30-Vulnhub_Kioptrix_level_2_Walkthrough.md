@@ -21,9 +21,9 @@ Gain the root access.
 - Escalate the privileges : Privilege Escalation
 - Clean up : Post-Exploitation
 
-### Host Discovery
+#### Host Discovery
 Generally we know the target IP address. Since lab is set up as internal network and addresses are assigned by DHCP server. We need to find the target IP address.
-![sudo netdiscover -r \<ip-range\>](/assets/img/vulnhub/kioptrix/lvl2 "Host Discovery using netdiscover")
+![sudo netdiscover -r \<ip-range\>](/assets/img/vulnhub/kioptrix/lvl2/kioptrix_lvl2_host_discovery.png "Host Discovery using netdiscover")
 
 At the heart of the struggle are two very different ideas of success—survival-driven and soul-driven. For survivalists, success is security, pragmatism, power over others. Success is the absence of material suffering, the nourishing of the soul be damned. It is an odd and ironic thing that most of the material power in our world often resides in the hands of younger souls. Still working in the egoic and material realms, they love the sensations of power and focus most of their energy on accumulation. Older souls tend not to be as materially driven. They have already played the worldly game in previous lives and they search for more subtle shades of meaning in this one—authentication rather than accumulation. They are often ignored by the culture at large, although they really are the truest warriors.
 
