@@ -1,7 +1,7 @@
 ---
 layout: post
-title: Vulnhub: Kioptrix level 2 Walkthrough
-subtitle: Difficulty: Simple
+title: "Vulnhub: Kioptrix level 2 Walkthrough"
+subtitle: "Difficulty: Simple"
 # cover-img: /assets/img/path.jpg
 thumbnail-img: /assets/img/thumb.png
 share-img: /assets/img/path.jpg
