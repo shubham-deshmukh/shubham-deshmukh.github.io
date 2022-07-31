@@ -89,7 +89,7 @@ Let's explore little bit, before finding possible approach for escalation.
 
 System is running on cent OS 4.5. Let's find whether there is any attack vector using searchsploit.
 
-![Exploit] (/assets/img/vulnhub/kioptrix/lvl2/exploit.png "Exploit")
+![Exploit](/assets/img/vulnhub/kioptrix/lvl2/exploit.png "Exploit")
 
 It does satisfy the requirement. Transfer the .c file to the target and compile it. How do transfer and compile? It is easy, if not I recommend you to use the ninja technique. I'll leave that to you. We have named pwn as our compiled file. Run the exploit. Hurray!!!! WE GOT THE ROOT.
 
