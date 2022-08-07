@@ -67,16 +67,17 @@ gobuster dir -u http://10.10.10.7/ -w /usr/share/wordlists/dirbuster/directory-l
 nikto -h 10.10.10.7 
 ```
 
-let's visit the url.
+let's visit the url. 
 ![Login Page](/assets/img/vulnhub/kioptrix/lvl4/login_page.png "Login Page")  
 
- Opps..Nothing unusual. Let's check the source code.   
+Wow.There is login page. It could lead to SQLi. Before that Let's check the source code.   
 ![Source Code](/assets/img/vulnhub/kioptrix/lvl4/source_code.png "Source Code")  
 
-Only notable thing is it redirects to checklogin.php on form submission.
+Opps..Nothing unusual. Only notable thing is it redirects to checklogin.php on form submission.
 
 Let's check nikto and gobuster results. Did we find anything interesting??🤔  
-![gobuster dir](/assets/img/vulnhub/kioptrix/lvl4/gobuster.png "Directory Listing")   
+![gobuster dir](/assets/img/vulnhub/kioptrix/lvl4/gobuster.png "Directory Listing")  
+
 ![nikto](/assets/img/vulnhub/kioptrix/lvl4/nikto.png "Nikto") 
 
 We have two interesting directories.  
@@ -102,7 +103,7 @@ You know our priorities while enumerating, right?? Now we have credentials😻 s
 ```bash
 ssh -oHostKeyAlgorithms=+ssh-dss robert@10.10.10.7
 ```
-What is this flag - ```-oHostKeyAlgorithm```? 🤔. Answer lies in the value of the flag. Still you did not get it---gooooogle fuuuu
+What is this flag - ```-oHostKeyAlgorithm```? 🤔. Answer lies in the value of the flag. Still you did not get it---gooooogle fuuuu  
 Hurray!!! We got the shell😍. 
 ![Robert's SSH](/assets/img/vulnhub/kioptrix/lvl4/robert_ssh.png "Robert's SSH")  
 
