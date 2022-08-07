@@ -110,5 +110,18 @@ Hurray!!! We got the shell😍.
 Let's take a break before moving forward. Have a coffee☕ or something 🧋
 
 #### Privilege Escalation
+After taking break let's continue where we left. We got the shell. Let's explore it. 
+
+![Restricted Shell](/assets/img/vulnhub/kioptrix/lvl4/restricted_shell.png "Restricted Shell")  
+
+Opps. It does not seems to be the normal shell. It is restricted shell.
+How to break a restricted shell? There are a lot of resources on the internet. But this kind of scenarios needs a lot of practise to find a way to break out of
+shell. After **_extensive_** research💦, I was able to break it.  
+
+✅Identify the shell type: ```echo $SHELL```  
+✅Break the shell: ```echo os.system("/bin/bash")```
+
+![Breaking Restricted Shell](/assets/img/vulnhub/kioptrix/lvl4/break_restricted_shell.png "Breaking restricted shell")
+
 
 #### Post-Exploitation
